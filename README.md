@@ -31,17 +31,17 @@ Getting Started
 
 Clone this repository:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git clone https://github.com/TLILIFIRAS/Q-A-System-with-PII-Anonymization.git   `
+`   git clone https://github.com/TLILIFIRAS/Q-A-System-with-PII-Anonymization.git   `
 
 Install the required dependencies:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   pip install -r requirements.txt   `
+`   pip install -r requirements.txt   `
 
 Set your OpenAI API key:
 
 You can set the API key as an environment variable:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   export OPENAI_API_KEY="your_openai_api_key"   `
+`   export OPENAI_API_KEY="your_openai_api_key"   `
 
 Alternatively, you can specify the API key directly in the code (not recommended for production).Usage
 
@@ -49,15 +49,15 @@ Alternatively, you can specify the API key directly in the code (not recommended
 
 Load your documents and create instances of the necessary classes:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   pythonCopier le codefrom langchain_core.documents import Document  from langchain_experimental.data_anonymizer import PresidioReversibleAnonymizer  from langchain_openai import ChatOpenAI  # Initialize your anonymizer and model  anonymizer = PresidioReversibleAnonymizer()  model = ChatOpenAI(temperature=0.3)  # Load your documents  documents = [Document(page_content="Your document content here.")]   `
+`langchain_core.documents import Document  from langchain_experimental.data_anonymizer import PresidioReversibleAnonymizer  from langchain_openai import ChatOpenAI  # Initialize your anonymizer and model  anonymizer = PresidioReversibleAnonymizer()  model = ChatOpenAI(temperature=0.3)  # Load your documents  documents = [Document(page_content="Your document content here.")]   `
 
 ### Anonymize the documents:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   pythonCopier le codefor doc in documents:      doc.page_content = anonymizer.anonymize(doc.page_content)   `
+` for doc in documents:      doc.page_content = anonymizer.anonymize(doc.page_content)   `
 
 ### Retrieve answers based on your queries:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   answer = anonymizer_chain.invoke({"question": "What happened on ?"})  print(answer)   `
+L`   answer = anonymizer_chain.invoke({"question": "What happened on ?"})  print(answer)   `
 
 License
 -------
