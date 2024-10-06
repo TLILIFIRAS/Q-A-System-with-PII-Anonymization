@@ -62,7 +62,7 @@ documents = [Document(page_content="Your document content here.")]   `
 
 ### Retrieve answers based on your queries:
 
-L`   answer = anonymizer_chain.invoke({"question": "What happened on ?"})  print(answer)   `
+`   answer = anonymizer_chain.invoke({"question": "What happened on ?"})  print(answer)   `
 
 License
 -------
