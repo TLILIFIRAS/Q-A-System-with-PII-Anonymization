@@ -49,7 +49,12 @@ Alternatively, you can specify the API key directly in the code (not recommended
 
 Load your documents and create instances of the necessary classes:
 
-`langchain_core.documents import Document  from langchain_experimental.data_anonymizer import PresidioReversibleAnonymizer  from langchain_openai import ChatOpenAI  # Initialize your anonymizer and model  anonymizer = PresidioReversibleAnonymizer()  model = ChatOpenAI(temperature=0.3)  # Load your documents  documents = [Document(page_content="Your document content here.")]   `
+`langchain_core.documents import Document
+from langchain_experimental.data_anonymizer import PresidioReversibleAnonymizer  
+from langchain_openai import ChatOpenAI  # Initialize your anonymizer and model  
+anonymizer = PresidioReversibleAnonymizer()  
+model = ChatOpenAI(temperature=0.3)  # Load your documents  
+documents = [Document(page_content="Your document content here.")]   `
 
 ### Anonymize the documents:
 
